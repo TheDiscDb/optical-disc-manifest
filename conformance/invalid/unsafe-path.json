@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "producer": {
+    "name": "invalid-fixture",
+    "version": "1"
+  },
+  "capabilities": [
+    "disc.files.complete"
+  ],
+  "disc": {
+    "format": "dvd",
+    "files": [
+      {
+        "path": "../VIDEO_TS/VIDEO_TS.IFO",
+        "sizeBytes": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "../../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "fixture-generator",
+    "version": "1.0.0"
+  },
+  "capabilities": [
+    "disc.identifiers",
+    "disc.files.complete",
+    "disc.titles.complete",
+    "disc.streams",
+    "disc.chapters.counts"
+  ],
+  "disc": {
+    "format": "dvd",
+    "identifiers": [
+      {
+        "kind": "dvd-disc-id",
+        "value": "83615B155A3E1AF8E3798E4EB79891ED",
+        "computedBy": "producer",
+        "inputPaths": [
+          "VIDEO_TS/VIDEO_TS.IFO",
+          "VIDEO_TS/VTS_01_0.IFO"
+        ]
+      }
+    ],
+    "files": [
+      {
+        "path": "VIDEO_TS/VIDEO_TS.IFO",
+        "sizeBytes": 16384,
+        "role": "metadata"
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.IFO",
+        "sizeBytes": 65536,
+        "role": "metadata"
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_1.VOB",
+        "sizeBytes": 1073709056,
+        "role": "stream"
+      }
+    ],
+    "titles": [
+      {
+        "index": 0,
+        "source": {
+          "kind": "dvd-pgc",
+          "titleSet": 1,
+          "pgc": 1
+        },
+        "durationSeconds": 7200,
+        "sizeBytes": 1073709056,
+        "chapterCount": 12,
+        "streams": [
+          {
+            "index": 0,
+            "type": "video",
+            "codec": "MPEG-2",
+            "resolution": "720x480",
+            "aspectRatio": "16:9"
+          },
+          {
+            "index": 1,
+            "type": "audio",
+            "codec": "AC-3",
+            "language": "eng",
+            "audioLayout": "5.1"
+          }
+        ]
+      }
+    ]
+  }
+}

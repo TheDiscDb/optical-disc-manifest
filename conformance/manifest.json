@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "path": "valid/dvd-basic.json",
+      "valid": true
+    },
+    {
+      "path": "valid/blu-ray-basic.json",
+      "valid": true
+    },
+    {
+      "path": "invalid/complete-files-missing.json",
+      "valid": false,
+      "reason": "A complete file inventory capability requires disc.files."
+    },
+    {
+      "path": "invalid/negative-duration.json",
+      "valid": false,
+      "reason": "Duration cannot be negative."
+    },
+    {
+      "path": "invalid/unsafe-path.json",
+      "valid": false,
+      "reason": "Disc paths cannot traverse outside the disc root."
+    }
+  ]
+}

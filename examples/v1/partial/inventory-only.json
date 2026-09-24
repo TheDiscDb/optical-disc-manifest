@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "inventory-only-tool",
+    "version": "0.1.0"
+  },
+  "capabilities": [
+    "disc.files.complete"
+  ],
+  "disc": {
+    "format": "uhd-blu-ray",
+    "files": [
+      {
+        "path": "BDMV/index.bdmv",
+        "sizeBytes": 212,
+        "role": "metadata"
+      },
+      {
+        "path": "BDMV/STREAM/00001.m2ts",
+        "sizeBytes": 45000000000,
+        "role": "stream"
+      }
+    ]
+  },
+  "extensions": {
+    "com.example/scanner-status": {
+      "titleParsing": "unsupported"
+    }
+  }
+}

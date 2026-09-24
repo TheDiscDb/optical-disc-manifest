@@ -1,0 +1,53 @@
+{
+  "$schema": "../../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "fixture-generator",
+    "version": "1.0.0"
+  },
+  "capabilities": [
+    "disc.titles.complete",
+    "disc.segments"
+  ],
+  "disc": {
+    "format": "blu-ray",
+    "titles": [
+      {
+        "index": 0,
+        "source": {
+          "kind": "blu-ray-playlist",
+          "path": "BDMV/PLAYLIST/00500.mpls"
+        },
+        "durationSeconds": 6000,
+        "segments": [
+          {
+            "index": 0,
+            "clip": "00001"
+          },
+          {
+            "index": 1,
+            "clip": "00002"
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "source": {
+          "kind": "blu-ray-playlist",
+          "path": "BDMV/PLAYLIST/00501.mpls"
+        },
+        "durationSeconds": 6000,
+        "segments": [
+          {
+            "index": 0,
+            "clip": "00002"
+          },
+          {
+            "index": 1,
+            "clip": "00001"
+          }
+        ]
+      }
+    ]
+  }
+}

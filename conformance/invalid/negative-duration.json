@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "producer": {
+    "name": "invalid-fixture",
+    "version": "1"
+  },
+  "capabilities": [
+    "disc.titles"
+  ],
+  "disc": {
+    "format": "blu-ray",
+    "titles": [
+      {
+        "index": 0,
+        "source": {
+          "kind": "blu-ray-playlist",
+          "path": "BDMV/PLAYLIST/00001.mpls"
+        },
+        "durationSeconds": -1
+      }
+    ]
+  }
+}
