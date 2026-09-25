@@ -1,0 +1,99 @@
+{
+  "$schema": "../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "fixture-generator",
+    "version": "1.0.0"
+  },
+  "capabilities": [
+    "disc.titles",
+    "disc.segments",
+    "disc.streams.declared",
+    "disc.chapters.timing",
+    "disc.titles.stereoscopic-3d",
+    "disc.clips"
+  ],
+  "disc": {
+    "format": "uhd-blu-ray",
+    "titles": [
+      {
+        "index": 0,
+        "source": {
+          "kind": "blu-ray-playlist",
+          "path": "BDMV/PLAYLIST/00800.mpls"
+        },
+        "durationSeconds": 8460,
+        "durationTicks45k": 380700000,
+        "segments": [
+          {
+            "index": 0,
+            "clip": "00300",
+            "filePath": "BDMV/STREAM/00300.m2ts",
+            "durationTicks45k": 8460
+          }
+        ],
+        "streams": [
+          {
+            "index": 0,
+            "type": "video",
+            "codec": "HEVC",
+            "codingTypeCode": 36,
+            "dynamicRangeTypeCode": 1,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false
+          }
+        ],
+        "stereoscopic3D": {
+          "relationshipType": "3d-dependent-view",
+          "baseClipId": "00300",
+          "baseCodecId": "M2TS",
+          "baseStcId": 0,
+          "dependentClipId": "00301",
+          "dependentCodecId": "M2TS",
+          "dependentStcId": 0,
+          "syncPlayItemId": 0,
+          "syncPresentationTimestampTicks45k": 0,
+          "isSsVideoSubPath": true,
+          "dependentStream": {
+            "pid": 4114,
+            "codingTypeCode": 32,
+            "codec": "MVC",
+            "formatCode": 3,
+            "rateCode": 3
+          }
+        }
+      }
+    ],
+    "clips": [
+      {
+        "clipId": "00301",
+        "streamPath": "BDMV/STREAM/00301.m2ts",
+        "sizeBytes": 1000000,
+        "clipInfoPath": "BDMV/CLIPINF/00301.clpi",
+        "durationSeconds": 8460,
+        "durationTicks45k": 380700000,
+        "numberOfSourcePackets": 50000,
+        "transportStreamRecordingRate": 15000000,
+        "streams": [
+          {
+            "index": 0,
+            "type": "video",
+            "codec": "MVC",
+            "pid": 4114,
+            "codingTypeCode": 32,
+            "formatCode": 3,
+            "rateCode": 3
+          }
+        ]
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "severity": "info",
+      "code": "UNSUPPORTED_EXTENSION",
+      "message": "An unsupported playlist extension was preserved as diagnostic evidence.",
+      "path": "BDMV/PLAYLIST/00800.mpls"
+    }
+  ]
+}

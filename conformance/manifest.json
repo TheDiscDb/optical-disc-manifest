@@ -10,6 +10,14 @@
       "valid": true
     },
     {
+      "path": "valid/blu-ray-3d-clips-hdr.json",
+      "valid": true
+    },
+    {
+      "path": "valid/dvd-line21-closed-captions.json",
+      "valid": true
+    },
+    {
       "path": "invalid/complete-files-missing.json",
       "valid": false,
       "reason": "A complete file inventory capability requires disc.files."
@@ -23,6 +31,11 @@
       "path": "invalid/unsafe-path.json",
       "valid": false,
       "reason": "Disc paths cannot traverse outside the disc root."
+    },
+    {
+      "path": "invalid/dvd-line21-closed-captions-invalid-field.json",
+      "valid": false,
+      "reason": "A line-21 caption field must be field 1 or 2."
     }
   ]
 }
