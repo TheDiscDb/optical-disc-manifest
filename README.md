@@ -10,7 +10,7 @@ An Optical Disc Manifest records evidence such as:
 - DVD title sets, PGCs, cells, chapters, and angles;
 - Blu-ray playlists, clips, play marks, and subpaths;
 - declared video, audio, and subtitle streams;
-- producer identity and explicit observation capabilities.
+- producer identity and capture provenance.
 
 It deliberately excludes human classification such as movie, episode, main
 feature, deleted scene, or editorial description. Those decisions belong to

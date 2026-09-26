@@ -18,9 +18,9 @@
       "valid": true
     },
     {
-      "path": "invalid/complete-files-missing.json",
+      "path": "invalid/content-hash-missing.json",
       "valid": false,
-      "reason": "A complete file inventory capability requires disc.files."
+      "reason": "disc.identifiers must contain a thediscdb-content-hash entry."
     },
     {
       "path": "invalid/negative-duration.json",

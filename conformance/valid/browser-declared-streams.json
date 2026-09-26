@@ -5,57 +5,44 @@
     "name": "browser-fixture",
     "version": "1.0.0"
   },
-  "capabilities": [
-    "disc.files.complete",
-    "disc.titles",
-    "disc.segments",
-    "disc.streams.declared",
-    "disc.chapters.timing"
-  ],
   "disc": {
     "format": "blu-ray",
+    "identifiers": [
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "089A457C4C854EDD9F081DABCCA0C695"
+      }
+    ],
     "files": [
       {
         "path": "BDMV/PLAYLIST/00001.mpls",
-        "sizeBytes": 256,
-        "role": "playlist"
+        "sizeBytes": 256
       },
       {
         "path": "BDMV/STREAM/00001.m2ts",
-        "sizeBytes": 4096,
-        "role": "stream"
+        "sizeBytes": 4096
       }
     ],
     "titles": [
       {
-        "index": 0,
         "source": {
-          "kind": "blu-ray-playlist",
           "path": "BDMV/PLAYLIST/00001.mpls"
         },
         "durationSeconds": 10,
-        "durationTicks45k": 450000,
         "chapters": [
           {
-            "index": 0,
-            "startSeconds": 0,
-            "startTicks45k": 0
+            "startSeconds": 0
           }
         ],
         "segments": [
           {
-            "index": 0,
             "clip": "00001",
-            "filePath": "BDMV/STREAM/00001.m2ts",
             "startSeconds": 0,
-            "durationSeconds": 10,
-            "startTicks45k": 0,
-            "durationTicks45k": 450000
+            "durationSeconds": 10
           }
         ],
         "streams": [
           {
-            "index": 0,
             "type": "video",
             "codec": "AVC",
             "pid": 4113,
@@ -66,14 +53,5 @@
         ]
       }
     ]
-  },
-  "diagnostics": [
-    {
-      "severity": "warning",
-      "code": "ODM_BROWSER_DECLARED_ONLY",
-      "message": "Stream metadata was read from navigation files and was not verified against payload bytes.",
-      "path": "BDMV/PLAYLIST/00001.mpls",
-      "byteOffset": 32
-    }
-  ]
+  }
 }

@@ -6,88 +6,61 @@
     "version": "1.0.0",
     "uri": "https://thediscdb.com/"
   },
-  "capabilities": [
-    "disc.identifiers",
-    "disc.files.complete",
-    "disc.titles.complete",
-    "disc.segments",
-    "disc.streams.declared",
-    "disc.chapters.counts",
-    "disc.chapters.timing"
-  ],
   "disc": {
     "format": "blu-ray",
     "name": "EXAMPLE_DISC",
     "identifiers": [
       {
         "kind": "aacs-disc-id",
-        "value": "DBB9FE8101D750F7BEB240B247213D91D3B2CFA9",
-        "computedBy": "producer",
-        "inputPaths": [
-          "AACS/Unit_Key_RO.inf"
-        ]
+        "value": "DBB9FE8101D750F7BEB240B247213D91D3B2CFA9"
       },
       {
-        "kind": "matrix256",
-        "value": "32ea8ebb9f6392b18843cf84ec420c17d51925afee364826218ae33b5c81d416",
-        "computedBy": "producer",
-        "algorithmVersion": "1"
+        "kind": "thediscdb-content-hash",
+        "value": "0633802636ACA37258C27FBDAEB527A6"
       }
     ],
     "files": [
       {
         "path": "AACS/Unit_Key_RO.inf",
-        "sizeBytes": 524288,
-        "role": "metadata"
+        "sizeBytes": 524288
       },
       {
         "path": "BDMV/PLAYLIST/00800.mpls",
-        "sizeBytes": 298,
-        "role": "playlist"
+        "sizeBytes": 298
       },
       {
         "path": "BDMV/STREAM/01000.m2ts",
-        "sizeBytes": 27027738624,
-        "role": "stream"
+        "sizeBytes": 27027738624
       }
     ],
     "titles": [
       {
-        "index": 0,
         "source": {
-          "kind": "blu-ray-playlist",
           "path": "BDMV/PLAYLIST/00800.mpls"
         },
         "durationSeconds": 6227.123,
         "sizeBytes": 27027738624,
-        "chapterCount": 2,
         "chapters": [
           {
-            "index": 0,
             "startSeconds": 0
           },
           {
-            "index": 1,
             "startSeconds": 3113.5
           }
         ],
         "segments": [
           {
-            "index": 0,
-            "clip": "01000",
-            "filePath": "BDMV/STREAM/01000.m2ts"
+            "clip": "01000"
           }
         ],
         "streams": [
           {
-            "index": 0,
             "type": "video",
             "codec": "AVC",
             "resolution": "1920x1080",
             "aspectRatio": "16:9"
           },
           {
-            "index": 1,
             "type": "audio",
             "codec": "TrueHD Atmos",
             "language": "eng",
@@ -95,7 +68,6 @@
             "audioLayout": "7.1"
           },
           {
-            "index": 2,
             "type": "subtitle",
             "codec": "PGS",
             "language": "eng",

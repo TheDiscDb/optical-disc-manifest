@@ -5,21 +5,22 @@
     "name": "inventory-only-tool",
     "version": "0.1.0"
   },
-  "capabilities": [
-    "disc.files.complete"
-  ],
   "disc": {
     "format": "uhd-blu-ray",
+    "identifiers": [
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "8D45DB64B3C72906548FE0A8F15028FF"
+      }
+    ],
     "files": [
       {
         "path": "BDMV/index.bdmv",
-        "sizeBytes": 212,
-        "role": "metadata"
+        "sizeBytes": 212
       },
       {
         "path": "BDMV/STREAM/00001.m2ts",
-        "sizeBytes": 45000000000,
-        "role": "stream"
+        "sizeBytes": 45000000000
       }
     ]
   },
