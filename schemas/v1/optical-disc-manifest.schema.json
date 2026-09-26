@@ -36,7 +36,9 @@
           "disc.segments",
           "disc.streams",
           "disc.chapters.counts",
-          "disc.chapters.timing"
+          "disc.chapters.timing",
+          "disc.titles.stereoscopic-3d",
+          "disc.clips"
         ]
       }
     },
@@ -162,6 +164,12 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/title"
+          }
+        },
+        "clips": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clip"
           }
         },
         "extensions": {
@@ -292,6 +300,9 @@
           "items": {
             "$ref": "#/$defs/stream"
           }
+        },
+        "stereoscopic3D": {
+          "$ref": "#/$defs/stereoscopicView"
         },
         "extensions": {
           "$ref": "#/$defs/extensions"
@@ -532,6 +543,143 @@
         },
         "extensions": {
           "$ref": "#/$defs/extensions"
+        }
+      }
+    },
+    "stereoscopicView": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relationshipType",
+        "baseClipId",
+        "dependentClipId"
+      ],
+      "properties": {
+        "relationshipType": {
+          "const": "3d-dependent-view"
+        },
+        "baseClipId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "baseCodecId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "baseStcId": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dependentClipId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "dependentCodecId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "dependentStcId": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "syncPlayItemId": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "syncPresentationTimestampTicks45k": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "isSsVideoSubPath": {
+          "type": "boolean"
+        },
+        "dependentStream": {
+          "$ref": "#/$defs/stereoscopicDependentStream"
+        }
+      }
+    },
+    "stereoscopicDependentStream": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "codingTypeCode",
+        "codec"
+      ],
+      "properties": {
+        "pid": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8191
+        },
+        "codingTypeCode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "codec": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "formatCode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "rateCode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        }
+      }
+    },
+    "clip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "clipId"
+      ],
+      "properties": {
+        "clipId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "streamPath": {
+          "$ref": "#/$defs/path"
+        },
+        "sizeBytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "clipInfoPath": {
+          "$ref": "#/$defs/path"
+        },
+        "durationSeconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "durationTicks45k": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "numberOfSourcePackets": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "transportStreamRecordingRate": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "streams": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stream"
+          }
         }
       }
     },
