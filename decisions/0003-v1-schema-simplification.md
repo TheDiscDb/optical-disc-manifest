@@ -34,6 +34,11 @@ through `diagnostics`.
 `disc.identifiers` becomes required, must contain at least one entry, and must
 contain a `thediscdb-content-hash` entry.
 
+`disc.files` becomes required and must contain at least one entry. The content
+hash is derived from this inventory, so it was already an implicit requirement;
+making it explicit turns a confusing "missing content hash" rejection into a
+direct one that names the actual omission.
+
 ### Added
 
 `stream.category`, `stream.frameRate`, `stream.isInterlaced`,
@@ -53,8 +58,10 @@ contain a `thediscdb-content-hash` entry.
 
 ## Consequences
 
-A manifest must now carry enough file inventory to derive its content hash, so
-a titles-only document is no longer valid alone.
+A manifest must now carry a file inventory sufficient to derive its content
+hash, so a titles-only document is no longer valid alone. Because `disc.files`
+is itself required, such a document is rejected for the omission it actually
+made rather than for the downstream hash it could not produce.
 
 Because the schema can only assert that a hash is *present*, conformance
 recomputes every declared hash from the document's own inventory. A

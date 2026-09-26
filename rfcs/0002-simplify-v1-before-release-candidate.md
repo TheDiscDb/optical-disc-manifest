@@ -58,6 +58,9 @@ Specify its derivation normatively and enforce it in conformance. `matrix256`
 is retained as an optional kind, since producers already emit it and it costs
 nothing to carry.
 
+Make `disc.files` required and non-empty, since the content hash is derived
+from it and cannot be produced without it.
+
 ## Compatibility
 
 `schemaVersion` stays at 1. No version of this format has been released, and the
@@ -66,7 +69,8 @@ or consumer to migrate.
 
 ## Drawbacks
 
-Requiring a content hash means a manifest must carry enough of a file inventory
-to derive one. A titles-only document is no longer valid on its own. This is
-intentional: such a document cannot be attached to a disc, which is the primary
-purpose of the format.
+Requiring a content hash means a manifest must carry a file inventory
+sufficient to derive one, and `disc.files` is therefore required as well. A
+titles-only document is no longer valid on its own. This is intentional: such a
+document cannot be attached to a disc, which is the primary purpose of the
+format.

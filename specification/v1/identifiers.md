@@ -14,7 +14,8 @@
 Every manifest contains exactly one `thediscdb-content-hash` entry. It is the
 stable join key between a manifest and an existing catalog entry, and it is
 derived entirely from the file inventory, so any producer that can enumerate
-the disc can compute it without reading payload bytes.
+the disc can compute it without reading payload bytes. Because the hash has no
+other source, `disc.files` is likewise required and non-empty.
 
 All other kinds are optional and may appear at most once. `matrix256` is
 retained for compatibility with producers that already emit it; its derivation

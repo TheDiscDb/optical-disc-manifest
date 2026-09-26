@@ -19,6 +19,10 @@
   - Made `disc.identifiers` required and mandated a `thediscdb-content-hash`
     entry, renaming the previous `legacy-disc-hash` kind. `matrix256` is
     retained as an optional kind.
+  - Made `disc.files` required and non-empty. The content hash is derived from
+    the inventory, so this was already an implicit requirement; stating it
+    directly means a files-less document is rejected for the omission it made
+    rather than for the hash it could not produce.
 - Documented the normative content-hash derivation in
   `specification/v1/identifiers.md` and added `tools/validate/Get-ContentHash.ps1`
   as its reference implementation.

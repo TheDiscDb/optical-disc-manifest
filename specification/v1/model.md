@@ -14,7 +14,7 @@ The root object contains:
 - optional namespaced `extensions`.
 
 The disc object contains its format, optional name, required typed
-identifiers, file inventory, and ordered titles.
+identifiers, a required file inventory, and ordered titles.
 
 A title locates itself with a single `source` object carrying whichever
 coordinates the source format provides: `path` for a disc-relative playlist or
@@ -27,6 +27,10 @@ release metadata are outside this model.
 
 `disc.identifiers` is required and always contains a `thediscdb-content-hash`
 entry. See [identifiers.md](identifiers.md) for the normative derivation.
+
+`disc.files` is required and carries at least one entry, because the content
+hash is derived from it. A manifest that describes titles but no files cannot
+be attached to a disc and is not valid.
 
 Blu-ray MVC evidence is represented on the base playlist title using
 `stereoscopic3D`. Its `relationshipType` is `3d-dependent-view`; the evidence
