@@ -31,3 +31,16 @@ from payload-verified metadata.
 - Agreement with independent tools on shared observable facts.
 - Recorded execution time and peak memory.
 - No fabricated values when evidence is unavailable.
+
+## Draft integration decisions
+
+- Whole control files may be buffered under an explicit size limit; media
+  payload files are never opened.
+- File inventory completeness and navigation parsing completeness are separate
+  capabilities.
+- IFO/MPLS/CLPI stream declarations use `disc.streams.declared`.
+- `disc.streams.payload-verified` is unavailable unless a producer separately
+  inspects media payloads.
+- Blu-ray 45 kHz timestamps are preserved as integers alongside derived seconds.
+- Parser failures are represented as structured diagnostics with source paths
+  and byte offsets where available.
