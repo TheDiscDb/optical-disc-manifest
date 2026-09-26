@@ -23,6 +23,11 @@
       "reason": "disc.identifiers must contain a thediscdb-content-hash entry."
     },
     {
+      "path": "invalid/files-missing.json",
+      "valid": false,
+      "reason": "disc.files is required; the content hash cannot be derived without it."
+    },
+    {
       "path": "invalid/negative-duration.json",
       "valid": false,
       "reason": "Duration cannot be negative."

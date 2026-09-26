@@ -63,7 +63,8 @@
       "additionalProperties": false,
       "required": [
         "format",
-        "identifiers"
+        "identifiers",
+        "files"
       ],
       "properties": {
         "format": {
@@ -100,6 +101,7 @@
         },
         "files": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "$ref": "#/$defs/file"
           }
