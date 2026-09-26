@@ -5,70 +5,56 @@
     "name": "fixture-generator",
     "version": "1.0.0"
   },
-  "capabilities": [
-    "disc.files.complete",
-    "disc.titles.complete",
-    "disc.segments",
-    "disc.streams.declared"
-  ],
   "disc": {
     "format": "blu-ray",
+    "identifiers": [
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "BDBE26D0B80A907C50D1D44110BDA399"
+      }
+    ],
     "files": [
       {
         "path": "BDMV/PLAYLIST/00001.mpls",
-        "sizeBytes": 512,
-        "role": "playlist"
+        "sizeBytes": 512
       },
       {
         "path": "BDMV/STREAM/00010.m2ts",
-        "sizeBytes": 1000000000,
-        "role": "stream"
+        "sizeBytes": 1000000000
       },
       {
         "path": "BDMV/STREAM/00011.m2ts",
-        "sizeBytes": 2000000000,
-        "role": "stream"
+        "sizeBytes": 2000000000
       },
       {
         "path": "BDMV/STREAM/00012.m2ts",
-        "sizeBytes": 1500000000,
-        "role": "stream"
+        "sizeBytes": 1500000000
       }
     ],
     "titles": [
       {
-        "index": 0,
         "source": {
-          "kind": "blu-ray-playlist",
           "path": "BDMV/PLAYLIST/00001.mpls"
         },
         "durationSeconds": 5400,
         "sizeBytes": 4500000000,
         "segments": [
           {
-            "index": 0,
-            "clip": "00010",
-            "filePath": "BDMV/STREAM/00010.m2ts"
+            "clip": "00010"
           },
           {
-            "index": 1,
-            "clip": "00011",
-            "filePath": "BDMV/STREAM/00011.m2ts"
+            "clip": "00011"
           },
           {
-            "index": 2,
-            "clip": "00012",
-            "filePath": "BDMV/STREAM/00012.m2ts"
+            "clip": "00012"
           }
         ],
         "streams": [
           {
-            "index": 0,
             "type": "video",
             "codec": "AVC"
           },
           {
-            "index": 1,
             "type": "audio",
             "codec": "DTS-HD MA",
             "language": "eng"

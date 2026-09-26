@@ -1,4 +1,5 @@
 {
+  "$schema": "../../schemas/v1/optical-disc-manifest.schema.json",
   "schemaVersion": 1,
   "producer": {
     "name": "invalid-fixture",
@@ -8,8 +9,8 @@
     "format": "blu-ray",
     "identifiers": [
       {
-        "kind": "thediscdb-content-hash",
-        "value": "DF673035E463A8C6091AC74E736FF58C"
+        "kind": "aacs-disc-id",
+        "value": "5D7F8A1C2E3B4A5968778695A4B3C2D1E0F10203"
       }
     ],
     "files": [
@@ -20,14 +21,6 @@
       {
         "path": "BDMV/STREAM/00001.m2ts",
         "sizeBytes": 10737418240
-      }
-    ],
-    "titles": [
-      {
-        "source": {
-          "path": "BDMV/PLAYLIST/00001.mpls"
-        },
-        "durationSeconds": -1
       }
     ]
   }

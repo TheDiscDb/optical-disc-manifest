@@ -4,12 +4,19 @@
     "name": "invalid-fixture",
     "version": "1"
   },
-  "capabilities": [
-    "disc.files.complete"
-  ],
   "disc": {
     "format": "dvd",
+    "identifiers": [
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "E5EDDF7F6E65F9D5A3802A981B058D0B"
+      }
+    ],
     "files": [
+      {
+        "path": "VIDEO_TS/VTS_01_1.VOB",
+        "sizeBytes": 1073709056
+      },
       {
         "path": "../VIDEO_TS/VIDEO_TS.IFO",
         "sizeBytes": 1

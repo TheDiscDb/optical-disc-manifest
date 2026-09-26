@@ -5,45 +5,73 @@
     "name": "fixture-generator",
     "version": "1.0.0"
   },
-  "capabilities": [
-    "disc.titles.complete",
-    "disc.segments"
-  ],
   "disc": {
     "format": "blu-ray",
+    "identifiers": [
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "B8A8921F8AE716017E9752B04FA2ABC9"
+      }
+    ],
+    "files": [
+      {
+        "path": "BDMV/index.bdmv",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "BDMV/MovieObject.bdmv",
+        "sizeBytes": 4096
+      },
+      {
+        "path": "BDMV/PLAYLIST/00500.mpls",
+        "sizeBytes": 1024
+      },
+      {
+        "path": "BDMV/PLAYLIST/00501.mpls",
+        "sizeBytes": 1024
+      },
+      {
+        "path": "BDMV/CLIPINF/00001.clpi",
+        "sizeBytes": 4096
+      },
+      {
+        "path": "BDMV/CLIPINF/00002.clpi",
+        "sizeBytes": 4096
+      },
+      {
+        "path": "BDMV/STREAM/00001.m2ts",
+        "sizeBytes": 21474836480
+      },
+      {
+        "path": "BDMV/STREAM/00002.m2ts",
+        "sizeBytes": 5368709120
+      }
+    ],
     "titles": [
       {
-        "index": 0,
         "source": {
-          "kind": "blu-ray-playlist",
           "path": "BDMV/PLAYLIST/00500.mpls"
         },
         "durationSeconds": 6000,
         "segments": [
           {
-            "index": 0,
             "clip": "00001"
           },
           {
-            "index": 1,
             "clip": "00002"
           }
         ]
       },
       {
-        "index": 1,
         "source": {
-          "kind": "blu-ray-playlist",
           "path": "BDMV/PLAYLIST/00501.mpls"
         },
         "durationSeconds": 6000,
         "segments": [
           {
-            "index": 0,
             "clip": "00002"
           },
           {
-            "index": 1,
             "clip": "00001"
           }
         ]

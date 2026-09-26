@@ -5,36 +5,65 @@
     "name": "fixture-generator",
     "version": "1.0.0"
   },
-  "capabilities": [
-    "disc.titles",
-    "disc.segments",
-    "disc.streams.declared",
-    "disc.chapters.timing",
-    "disc.titles.stereoscopic-3d",
-    "disc.clips"
-  ],
   "disc": {
     "format": "uhd-blu-ray",
+    "identifiers": [
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "2A080D417F5A45605BB5E05FD7DE0087"
+      }
+    ],
+    "files": [
+      {
+        "path": "BDMV/index.bdmv",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "BDMV/MovieObject.bdmv",
+        "sizeBytes": 4096
+      },
+      {
+        "path": "BDMV/PLAYLIST/00800.mpls",
+        "sizeBytes": 1024
+      },
+      {
+        "path": "BDMV/CLIPINF/00300.clpi",
+        "sizeBytes": 8192
+      },
+      {
+        "path": "BDMV/CLIPINF/00301.clpi",
+        "sizeBytes": 8192
+      },
+      {
+        "path": "BDMV/STREAM/00300.m2ts",
+        "sizeBytes": 32212254720
+      },
+      {
+        "path": "BDMV/STREAM/00301.m2ts",
+        "sizeBytes": 16106127360
+      },
+      {
+        "path": "BDMV/STREAM/SSIF/00300.ssif",
+        "sizeBytes": 48318382080
+      },
+      {
+        "path": "BDMV/BACKUP/index.bdmv",
+        "sizeBytes": 2048
+      }
+    ],
     "titles": [
       {
-        "index": 0,
         "source": {
-          "kind": "blu-ray-playlist",
           "path": "BDMV/PLAYLIST/00800.mpls"
         },
         "durationSeconds": 8460,
-        "durationTicks45k": 380700000,
         "segments": [
           {
-            "index": 0,
-            "clip": "00300",
-            "filePath": "BDMV/STREAM/00300.m2ts",
-            "durationTicks45k": 8460
+            "clip": "00300"
           }
         ],
         "streams": [
           {
-            "index": 0,
             "type": "video",
             "codec": "HEVC",
             "codingTypeCode": 36,
@@ -68,15 +97,12 @@
       {
         "clipId": "00301",
         "streamPath": "BDMV/STREAM/00301.m2ts",
-        "sizeBytes": 1000000,
         "clipInfoPath": "BDMV/CLIPINF/00301.clpi",
         "durationSeconds": 8460,
-        "durationTicks45k": 380700000,
         "numberOfSourcePackets": 50000,
         "transportStreamRecordingRate": 15000000,
         "streams": [
           {
-            "index": 0,
             "type": "video",
             "codec": "MVC",
             "pid": 4114,
@@ -87,13 +113,5 @@
         ]
       }
     ]
-  },
-  "diagnostics": [
-    {
-      "severity": "info",
-      "code": "UNSUPPORTED_EXTENSION",
-      "message": "An unsupported playlist extension was preserved as diagnostic evidence.",
-      "path": "BDMV/PLAYLIST/00800.mpls"
-    }
-  ]
+  }
 }

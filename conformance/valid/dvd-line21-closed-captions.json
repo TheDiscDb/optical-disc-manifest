@@ -5,24 +5,53 @@
     "name": "fixture-generator",
     "version": "1.0.0"
   },
-  "capabilities": [
-    "disc.titles",
-    "disc.streams.declared"
-  ],
   "disc": {
     "format": "dvd",
+    "identifiers": [
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "3C26420DF046543F2332262F545351E5"
+      }
+    ],
+    "files": [
+      {
+        "path": "VIDEO_TS/VIDEO_TS.IFO",
+        "sizeBytes": 16384
+      },
+      {
+        "path": "VIDEO_TS/VIDEO_TS.BUP",
+        "sizeBytes": 16384
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.IFO",
+        "sizeBytes": 32768
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.BUP",
+        "sizeBytes": 32768
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.IFO",
+        "sizeBytes": 65536
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.BUP",
+        "sizeBytes": 65536
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_1.VOB",
+        "sizeBytes": 1073709056
+      }
+    ],
     "titles": [
       {
-        "index": 0,
         "source": {
-          "kind": "dvd-title",
           "title": 1,
           "titleSet": 2,
           "titleSetTitle": 1
         },
         "streams": [
           {
-            "index": 0,
             "type": "video",
             "codec": "MPEG-2",
             "resolution": "720x480",
