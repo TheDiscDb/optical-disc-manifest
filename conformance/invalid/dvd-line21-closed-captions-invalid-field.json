@@ -1,0 +1,36 @@
+{
+  "$schema": "../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "fixture-generator",
+    "version": "1.0.0"
+  },
+  "capabilities": [
+    "disc.titles",
+    "disc.streams.declared"
+  ],
+  "disc": {
+    "format": "dvd",
+    "titles": [
+      {
+        "index": 0,
+        "source": {
+          "kind": "dvd-title",
+          "title": 1,
+          "titleSet": 2,
+          "titleSetTitle": 1
+        },
+        "streams": [
+          {
+            "index": 0,
+            "type": "video",
+            "codec": "MPEG-2",
+            "line21ClosedCaptionFields": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

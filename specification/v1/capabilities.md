@@ -13,11 +13,23 @@ The current discussion set is:
 - `disc.titles`
 - `disc.titles.complete`
 - `disc.segments`
-- `disc.streams`
+- `disc.streams.declared`
+- `disc.streams.payload-verified`
 - `disc.chapters.counts`
 - `disc.chapters.timing`
+- `disc.titles.stereoscopic-3d`
+- `disc.clips`
 
-Before v1.0.0, stream capability must be split into declared structural
-metadata and payload-verified metadata. A browser producer can be complete for
-IFO/MPLS/CLPI structure without claiming it inspected encrypted VOB/M2TS
-payloads.
+`disc.streams.declared` means that stream metadata was read from disc control
+files such as DVD IFO, Blu-ray MPLS, or CLPI. `disc.streams.payload-verified`
+is a separate, stronger claim that stream evidence was checked in media
+payload. Declared stream evidence alone never implies payload verification.
+
+`disc.titles.stereoscopic-3d` indicates that title evidence includes an
+authored base-view/dependent-view relationship; it does not mean the dependent
+view is an alternate angle or an independent title. `disc.clips` indicates
+that standalone clip evidence is present. Producers only claim capabilities
+they actually provide; absent or unsupported data must not be fabricated.
+
+A producer may be complete for IFO/MPLS/CLPI structure without claiming it
+inspected encrypted VOB/M2TS/SSIF payloads.

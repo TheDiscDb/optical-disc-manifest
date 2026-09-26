@@ -9,7 +9,7 @@
     "disc.files.complete",
     "disc.titles.complete",
     "disc.segments",
-    "disc.streams"
+    "disc.streams.declared"
   ],
   "disc": {
     "format": "blu-ray",

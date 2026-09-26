@@ -9,7 +9,7 @@
     "disc.identifiers",
     "disc.files.complete",
     "disc.titles.complete",
-    "disc.streams",
+    "disc.streams.declared",
     "disc.chapters.counts"
   ],
   "disc": {

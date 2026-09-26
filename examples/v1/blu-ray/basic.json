@@ -11,7 +11,7 @@
     "disc.files.complete",
     "disc.titles.complete",
     "disc.segments",
-    "disc.streams",
+    "disc.streams.declared",
     "disc.chapters.counts",
     "disc.chapters.timing"
   ],

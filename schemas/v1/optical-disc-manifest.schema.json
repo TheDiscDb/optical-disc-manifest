@@ -34,7 +34,8 @@
           "disc.titles",
           "disc.titles.complete",
           "disc.segments",
-          "disc.streams",
+          "disc.streams.declared",
+          "disc.streams.payload-verified",
           "disc.chapters.counts",
           "disc.chapters.timing",
           "disc.titles.stereoscopic-3d",
@@ -48,6 +49,12 @@
     },
     "disc": {
       "$ref": "#/$defs/disc"
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/diagnostic"
+      }
     },
     "extensions": {
       "$ref": "#/$defs/extensions"
@@ -275,6 +282,10 @@
           "type": "number",
           "minimum": 0
         },
+        "durationTicks45k": {
+          "type": "integer",
+          "minimum": 0
+        },
         "sizeBytes": {
           "type": "integer",
           "minimum": 0
@@ -319,6 +330,9 @@
         },
         {
           "$ref": "#/$defs/dvdPgcSource"
+        },
+        {
+          "$ref": "#/$defs/dvdTitleSource"
         },
         {
           "$ref": "#/$defs/fileSource"
@@ -401,6 +415,40 @@
         }
       }
     },
+    "dvdTitleSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "title",
+        "titleSet",
+        "titleSetTitle"
+      ],
+      "properties": {
+        "kind": {
+          "const": "dvd-title"
+        },
+        "title": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 99
+        },
+        "titleSet": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 99
+        },
+        "titleSetTitle": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 99
+        },
+        "angle": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
     "fileSource": {
       "type": "object",
       "additionalProperties": false,
@@ -453,6 +501,14 @@
         "durationSeconds": {
           "type": "number",
           "minimum": 0
+        },
+        "startTicks45k": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "durationTicks45k": {
+          "type": "integer",
+          "minimum": 0
         }
       }
     },
@@ -482,6 +538,14 @@
         },
         "durationSeconds": {
           "type": "number",
+          "minimum": 0
+        },
+        "startTicks45k": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "durationTicks45k": {
+          "type": "integer",
           "minimum": 0
         },
         "angle": {
@@ -516,6 +580,48 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 255
+        },
+        "pid": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8191
+        },
+        "codingTypeCode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "formatCode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "rateCode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "dynamicRangeTypeCode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "colorSpaceCode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "hdrPlusFlag": {
+          "type": "boolean"
+        },
+        "line21ClosedCaptionFields": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [1, 2]
+          }
         },
         "language": {
           "type": "string",
@@ -680,6 +786,40 @@
           "items": {
             "$ref": "#/$defs/stream"
           }
+        }
+      }
+    },
+    "diagnostic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "severity",
+        "code",
+        "message"
+      ],
+      "properties": {
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_.-]{1,63}$"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "path": {
+          "$ref": "#/$defs/path"
+        },
+        "byteOffset": {
+          "type": "integer",
+          "minimum": 0
         }
       }
     },
