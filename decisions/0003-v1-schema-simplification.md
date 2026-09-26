@@ -21,7 +21,7 @@ because nothing has been released.
 | `file.role` | Derivable from the path and extension. |
 | `segment.filePath` | The referenced clip already carries its path. |
 | `clip.sizeBytes` | The file inventory already carries it. |
-| `legacy-disc-hash`, `matrix256` identifier kinds | Superseded by `thediscdb-content-hash`. |
+| `legacy-disc-hash` identifier kind | Renamed to `thediscdb-content-hash`. |
 
 ### Changed
 
@@ -47,6 +47,9 @@ contain a `thediscdb-content-hash` entry.
   from any file size, so it cannot be recomputed from the inventory.
 - `clip.streamPath` and similar cross-references: flattening them into a
   hierarchy would duplicate clip records shared by multiple titles.
+- `matrix256`: an optional legacy fingerprint some producers already emit.
+  It is not a join key and its derivation is unspecified, but carrying it
+  costs nothing and dropping it would discard data already in circulation.
 
 ## Consequences
 

@@ -17,7 +17,8 @@
   - Added `stream.category`, `stream.frameRate`, `stream.isInterlaced`,
     `stream.sampleRate`, and a `menu` stream type.
   - Made `disc.identifiers` required and mandated a `thediscdb-content-hash`
-    entry, replacing the previous `legacy-disc-hash` and `matrix256` kinds.
+    entry, renaming the previous `legacy-disc-hash` kind. `matrix256` is
+    retained as an optional kind.
 - Documented the normative content-hash derivation in
   `specification/v1/identifiers.md` and added `tools/validate/Get-ContentHash.ps1`
   as its reference implementation.

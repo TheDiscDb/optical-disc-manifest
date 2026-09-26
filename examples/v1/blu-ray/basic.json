@@ -15,6 +15,10 @@
         "value": "DBB9FE8101D750F7BEB240B247213D91D3B2CFA9"
       },
       {
+        "kind": "matrix256",
+        "value": "32ea8ebb9f6392b18843cf84ec420c17d51925afee364826218ae33b5c81d416"
+      },
+      {
         "kind": "thediscdb-content-hash",
         "value": "0633802636ACA37258C27FBDAEB527A6"
       }

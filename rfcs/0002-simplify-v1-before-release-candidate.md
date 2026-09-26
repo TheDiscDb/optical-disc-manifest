@@ -53,8 +53,10 @@ Add the stream properties both producers already observe and could not express:
 `category`, `frameRate`, `isInterlaced`, `sampleRate`, and a `menu` stream type.
 
 Make `disc.identifiers` required and require it to contain a
-`thediscdb-content-hash` entry, superseding `legacy-disc-hash` and `matrix256`.
-Specify its derivation normatively and enforce it in conformance.
+`thediscdb-content-hash` entry, renaming the previous `legacy-disc-hash` kind.
+Specify its derivation normatively and enforce it in conformance. `matrix256`
+is retained as an optional kind, since producers already emit it and it costs
+nothing to carry.
 
 ## Compatibility
 

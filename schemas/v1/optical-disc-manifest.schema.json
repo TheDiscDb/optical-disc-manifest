@@ -133,6 +133,7 @@
           "enum": [
             "aacs-disc-id",
             "dvd-disc-id",
+            "matrix256",
             "thediscdb-content-hash"
           ]
         },

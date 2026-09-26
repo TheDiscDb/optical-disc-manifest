@@ -9,11 +9,16 @@
 | `thediscdb-content-hash` | Size-derived disc content hash. **Required.** |
 | `aacs-disc-id` | AACS disc identifier, when observed. |
 | `dvd-disc-id` | DVD disc identifier, when observed. |
+| `matrix256` | Legacy producer-computed disc fingerprint, when available. |
 
 Every manifest contains exactly one `thediscdb-content-hash` entry. It is the
 stable join key between a manifest and an existing catalog entry, and it is
 derived entirely from the file inventory, so any producer that can enumerate
 the disc can compute it without reading payload bytes.
+
+All other kinds are optional and may appear at most once. `matrix256` is
+retained for compatibility with producers that already emit it; its derivation
+is not specified here, and consumers must not treat it as a join key.
 
 ## Deriving `thediscdb-content-hash`
 
