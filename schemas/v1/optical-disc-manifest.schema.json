@@ -63,8 +63,7 @@
       "additionalProperties": false,
       "required": [
         "format",
-        "identifiers",
-        "files"
+        "identifiers"
       ],
       "properties": {
         "format": {
@@ -182,11 +181,25 @@
         "source": {
           "$ref": "#/$defs/titleSource"
         },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        },
         "durationSeconds": {
           "type": "number",
           "minimum": 0
         },
         "sizeBytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "displaySize": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "chapterCount": {
           "type": "integer",
           "minimum": 0
         },

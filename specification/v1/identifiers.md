@@ -14,8 +14,15 @@
 Every manifest contains exactly one `thediscdb-content-hash` entry. It is the
 stable join key between a manifest and an existing catalog entry, and it is
 derived entirely from the file inventory, so any producer that can enumerate
-the disc can compute it without reading payload bytes. Because the hash has no
-other source, `disc.files` is likewise required and non-empty.
+the disc can compute it without reading payload bytes.
+
+Because the hash has no other source, a producer that can enumerate the disc
+filesystem MUST also record `disc.files`. `disc.files` is optional only to
+allow manifests reconstructed from a prior capture log, where the inventory
+genuinely was not observed. A manifest that declares a content hash but omits
+`files` is carrying an **asserted, not verifiable** identifier: no consumer can
+recompute it, and the reference implementation reports it as unverifiable
+rather than as matching.
 
 All other kinds are optional and may appear at most once. `matrix256` is
 retained for compatibility with producers that already emit it; its derivation

@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "invalid-fixture",
+    "version": "1"
+  },
+  "disc": {
+    "format": "blu-ray",
+    "identifiers": [
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "1B2FD1C4A4C5C6D8E90A1B2C3D4E5F60"
+      }
+    ],
+    "files": []
+  }
+}

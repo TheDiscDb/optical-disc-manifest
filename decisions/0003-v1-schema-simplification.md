@@ -3,6 +3,8 @@
 - Status: accepted
 - Date: 2026-02-14
 - RFC: [0002-simplify-v1-before-release-candidate](../rfcs/0002-simplify-v1-before-release-candidate.md)
+- Amended by: [0004-title-capture-fidelity](0004-title-capture-fidelity.md), which
+  restores `title.chapterCount` and returns `disc.files` to optional.
 
 ## Decision
 

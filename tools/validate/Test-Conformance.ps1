@@ -27,6 +27,19 @@ if ($cases.Count -eq 0) {
 
 $failures = [System.Collections.Generic.List[string]]::new()
 $hashChecked = [System.Collections.Generic.List[string]]::new()
+$unverifiable = [System.Collections.Generic.List[string]]::new()
+
+# disc.files is optional, so a manifest can declare a content hash it does not carry the
+# evidence to prove. Such a hash is asserted, not verifiable: recompute the ones we can and
+# account for the rest separately rather than reporting them as failures.
+function Test-HashVerifiable {
+    param([string] $DocumentPath)
+
+    $document = Get-Content -LiteralPath $DocumentPath -Raw | ConvertFrom-Json
+    $filesProperty = $document.disc.PSObject.Properties['files']
+    if (-not $filesProperty) { return $false }
+    return @($filesProperty.Value).Count -gt 0
+}
 
 foreach ($case in $cases) {
     $path = Join-Path $root 'conformance' $case.path
@@ -40,7 +53,10 @@ foreach ($case in $cases) {
         $failures.Add("$($case.path): expected valid=$($case.valid), actual=$actual")
     }
 
-    if ($case.valid) { $hashChecked.Add($path) }
+    if ($case.valid) {
+        if (Test-HashVerifiable -DocumentPath $path) { $hashChecked.Add($path) }
+        else { $unverifiable.Add($path) }
+    }
 }
 
 $examples = @(Get-ChildItem -LiteralPath (Join-Path $root 'examples') -Recurse -File -Filter '*.json')
@@ -53,7 +69,8 @@ foreach ($example in $examples) {
         $failures.Add("Example failed schema validation: $($example.FullName)")
     }
     else {
-        $hashChecked.Add($example.FullName)
+        if (Test-HashVerifiable -DocumentPath $example.FullName) { $hashChecked.Add($example.FullName) }
+        else { $unverifiable.Add($example.FullName) }
     }
 }
 
@@ -76,5 +93,5 @@ if ($failures.Count -gt 0) {
     exit 1
 }
 
-Write-Output ('Optical Disc Manifest conformance cases passed ({0} case(s), {1} example(s), {2} content hash(es) verified).' -f
-    $cases.Count, $examples.Count, $hashChecked.Count)
+Write-Output ('Optical Disc Manifest conformance cases passed ({0} case(s), {1} example(s), {2} content hash(es) verified, {3} asserted but unverifiable).' -f
+    $cases.Count, $examples.Count, $hashChecked.Count, $unverifiable.Count)

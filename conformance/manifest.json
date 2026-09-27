@@ -23,9 +23,9 @@
       "reason": "disc.identifiers must contain a thediscdb-content-hash entry."
     },
     {
-      "path": "invalid/files-missing.json",
+      "path": "invalid/files-empty.json",
       "valid": false,
-      "reason": "disc.files is required; the content hash cannot be derived without it."
+      "reason": "disc.files, when present, must list at least one file."
     },
     {
       "path": "invalid/negative-duration.json",
@@ -44,6 +44,14 @@
     },
     {
       "path": "valid/browser-declared-streams.json",
+      "valid": true
+    },
+    {
+      "path": "valid/files-omitted.json",
+      "valid": true
+    },
+    {
+      "path": "valid/title-fidelity-fields.json",
       "valid": true
     }
   ]

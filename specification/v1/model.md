@@ -14,7 +14,7 @@ The root object contains:
 - optional namespaced `extensions`.
 
 The disc object contains its format, optional name, required typed
-identifiers, a required file inventory, and ordered titles.
+identifiers, an optional file inventory, and ordered titles.
 
 A title locates itself with a single `source` object carrying whichever
 coordinates the source format provides: `path` for a disc-relative playlist or
@@ -22,15 +22,38 @@ stream file, and `title`, `titleSet`, and `titleSetTitle` for DVD title-set
 coordinates. At least one property is present. Absence of a coordinate means
 it was not observed; there is no separate "unknown source" form.
 
+A title may also carry an optional `label`: a short human- or menu-facing name
+for the title, such as a Blu-ray BD-J title label. Labels are descriptive
+only. They are not unique within a disc, are frequently opaque, and MUST NOT
+be used as an identity or matching key.
+
+`durationSeconds` and `sizeBytes` are the normative duration and size. A
+producer MAY additionally record `displaySize`, its own human-readable
+rendering of `sizeBytes`. `displaySize` is presentational and non-normative:
+consumers that need a size MUST use `sizeBytes`. It exists because renderings
+are not byte-exact reproducible across producers, so a value that a consumer
+already displays or matches on cannot be safely recomputed from `sizeBytes`
+alone.
+
+`chapters` carries per-chapter timing. A producer that knows how many chapters
+a title has but observed no chapter timings MAY record `chapterCount` instead.
+When both are present, `chapters` is authoritative and `chapterCount` SHOULD
+equal its length.
+
 Segments, chapters, and streams are title-local. Human classification and
 release metadata are outside this model.
 
 `disc.identifiers` is required and always contains a `thediscdb-content-hash`
 entry. See [identifiers.md](identifiers.md) for the normative derivation.
 
-`disc.files` is required and carries at least one entry, because the content
-hash is derived from it. A manifest that describes titles but no files cannot
-be attached to a disc and is not valid.
+`disc.files` is optional, but when present it carries at least one entry. A
+producer that can enumerate the disc filesystem MUST include `files`, because
+the content hash is derived from it and the inventory is what makes the hash
+checkable. When `files` is absent the declared content hash is **asserted, not
+verifiable**: a consumer cannot recompute it, and MUST decide on its own
+whether to trust the producer. Producers SHOULD omit `files` only when the
+inventory genuinely was not observed, such as when a manifest is reconstructed
+from a prior capture log rather than from the disc itself.
 
 Blu-ray MVC evidence is represented on the base playlist title using
 `stereoscopic3D`. Its `relationshipType` is `3d-dependent-view`; the evidence

@@ -36,7 +36,8 @@ begin {
     function Get-HashInput {
         param($Manifest)
 
-        $files = @($Manifest.disc.PSObject.Properties['files'].Value)
+        $filesProperty = $Manifest.disc.PSObject.Properties['files']
+        $files = if ($filesProperty) { @($filesProperty.Value) } else { @() }
         if ($files.Count -eq 0) {
             throw 'The manifest carries no disc.files inventory, so the content hash cannot be derived.'
         }

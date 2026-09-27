@@ -38,6 +38,8 @@
         },
         "durationSeconds": 7200,
         "sizeBytes": 1073709056,
+        "displaySize": "1023.9 MB",
+        "chapterCount": 24,
         "streams": [
           {
             "type": "video",

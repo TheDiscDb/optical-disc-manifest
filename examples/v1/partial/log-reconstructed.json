@@ -2,39 +2,16 @@
   "$schema": "../../../schemas/v1/optical-disc-manifest.schema.json",
   "schemaVersion": 1,
   "producer": {
-    "name": "fixture-generator",
-    "version": "1.0.0",
-    "uri": "https://thediscdb.com/"
+    "name": "log-reconstructor",
+    "version": "0.1.0"
   },
   "disc": {
     "format": "blu-ray",
     "name": "EXAMPLE_DISC",
     "identifiers": [
       {
-        "kind": "aacs-disc-id",
-        "value": "DBB9FE8101D750F7BEB240B247213D91D3B2CFA9"
-      },
-      {
-        "kind": "matrix256",
-        "value": "32ea8ebb9f6392b18843cf84ec420c17d51925afee364826218ae33b5c81d416"
-      },
-      {
         "kind": "thediscdb-content-hash",
         "value": "0633802636ACA37258C27FBDAEB527A6"
-      }
-    ],
-    "files": [
-      {
-        "path": "AACS/Unit_Key_RO.inf",
-        "sizeBytes": 524288
-      },
-      {
-        "path": "BDMV/PLAYLIST/00800.mpls",
-        "sizeBytes": 298
-      },
-      {
-        "path": "BDMV/STREAM/01000.m2ts",
-        "sizeBytes": 27027738624
       }
     ],
     "titles": [
@@ -43,18 +20,10 @@
         "source": {
           "path": "BDMV/PLAYLIST/00800.mpls"
         },
-        "durationSeconds": 6227.123,
+        "durationSeconds": 6227,
         "sizeBytes": 27027738624,
         "displaySize": "25.1 GB",
-        "chapterCount": 2,
-        "chapters": [
-          {
-            "startSeconds": 0
-          },
-          {
-            "startSeconds": 3113.5
-          }
-        ],
+        "chapterCount": 12,
         "segments": [
           {
             "clip": "01000"
@@ -73,12 +42,6 @@
             "language": "eng",
             "languageName": "English",
             "audioLayout": "7.1"
-          },
-          {
-            "type": "subtitle",
-            "codec": "PGS",
-            "language": "eng",
-            "languageName": "English"
           }
         ]
       }
