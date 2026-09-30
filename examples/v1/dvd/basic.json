@@ -1,0 +1,64 @@
+{
+  "$schema": "../../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "example-producer",
+    "version": "1.0.0"
+  },
+  "disc": {
+    "format": "dvd",
+    "identifiers": [
+      {
+        "kind": "dvd-disc-id",
+        "value": "83615B155A3E1AF8E3798E4EB79891ED"
+      },
+      {
+        "kind": "matrix256",
+        "value": "2679bf8288a4aa1d5497de6ee6b4cc7b491719102007a5ae417b553800125e74"
+      },
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "6EA135E733DB603765376D13F02A2D9D"
+      }
+    ],
+    "files": [
+      {
+        "path": "VIDEO_TS/VIDEO_TS.IFO",
+        "sizeBytes": 16384
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.IFO",
+        "sizeBytes": 65536
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_1.VOB",
+        "sizeBytes": 1073709056
+      }
+    ],
+    "titles": [
+      {
+        "source": {
+          "titleSet": 1
+        },
+        "durationSeconds": 7200,
+        "sizeBytes": 1073709056,
+        "displaySize": "1023.9 MB",
+        "chapterCount": 24,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "resolution": "720x480",
+            "aspectRatio": "16:9"
+          },
+          {
+            "type": "audio",
+            "codec": "AC-3",
+            "language": "eng",
+            "audioLayout": "5.1"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "example-producer",
+    "version": "1.0.0"
+  },
+  "disc": {
+    "format": "blu-ray",
+    "identifiers": [
+      {
+        "kind": "matrix256",
+        "value": "c9466e303504773cb953454ee730dd9d52e8d8b29747cf1c1168ef248c003926"
+      },
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "089A457C4C854EDD9F081DABCCA0C695"
+      }
+    ],
+    "files": [
+      {
+        "path": "BDMV/PLAYLIST/00001.mpls",
+        "sizeBytes": 256
+      },
+      {
+        "path": "BDMV/STREAM/00001.m2ts",
+        "sizeBytes": 4096
+      }
+    ],
+    "titles": [
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00001.mpls"
+        },
+        "durationSeconds": 10,
+        "chapters": [
+          {
+            "startSeconds": 0
+          }
+        ],
+        "segments": [
+          {
+            "clip": "00001",
+            "startSeconds": 0,
+            "durationSeconds": 10
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "AVC",
+            "pid": 4113,
+            "codingTypeCode": 27,
+            "formatCode": 6,
+            "rateCode": 1
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "example-producer",
+    "version": "1.0.0"
+  },
+  "disc": {
+    "format": "dvd",
+    "identifiers": [
+      {
+        "kind": "matrix256",
+        "value": "35465a89b9cbc90a89dcdd20ba72c4098931f26f1b0f4484673c6fd15a946616"
+      },
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "3C26420DF046543F2332262F545351E5"
+      }
+    ],
+    "files": [
+      {
+        "path": "VIDEO_TS/VIDEO_TS.IFO",
+        "sizeBytes": 16384
+      },
+      {
+        "path": "VIDEO_TS/VIDEO_TS.BUP",
+        "sizeBytes": 16384
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.IFO",
+        "sizeBytes": 32768
+      },
+      {
+        "path": "VIDEO_TS/VTS_01_0.BUP",
+        "sizeBytes": 32768
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.IFO",
+        "sizeBytes": 65536
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_0.BUP",
+        "sizeBytes": 65536
+      },
+      {
+        "path": "VIDEO_TS/VTS_02_1.VOB",
+        "sizeBytes": 1073709056
+      }
+    ],
+    "titles": [
+      {
+        "source": {
+          "title": 1,
+          "titleSet": 2,
+          "titleSetTitle": 1
+        },
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MPEG-2",
+            "resolution": "720x480",
+            "aspectRatio": "16:9",
+            "line21ClosedCaptionFields": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

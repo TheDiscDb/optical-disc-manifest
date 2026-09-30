@@ -1,0 +1,50 @@
+{
+  "$schema": "../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "example-producer",
+    "version": "0.1.0"
+  },
+  "disc": {
+    "format": "blu-ray",
+    "name": "EXAMPLE_DISC",
+    "identifiers": [
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "0633802636ACA37258C27FBDAEB527A6"
+      }
+    ],
+    "titles": [
+      {
+        "label": "A1",
+        "source": {
+          "path": "BDMV/PLAYLIST/00800.mpls"
+        },
+        "durationSeconds": 6227,
+        "sizeBytes": 27027738624,
+        "displaySize": "25.1 GB",
+        "chapterCount": 12,
+        "segments": [
+          {
+            "clip": "01000"
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "AVC",
+            "resolution": "1920x1080",
+            "aspectRatio": "16:9"
+          },
+          {
+            "type": "audio",
+            "codec": "TrueHD Atmos",
+            "language": "eng",
+            "languageName": "English",
+            "audioLayout": "7.1"
+          }
+        ]
+      }
+    ]
+  }
+}

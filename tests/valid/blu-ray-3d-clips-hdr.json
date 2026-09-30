@@ -1,0 +1,121 @@
+{
+  "$schema": "../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "example-producer",
+    "version": "1.0.0"
+  },
+  "disc": {
+    "format": "uhd-blu-ray",
+    "identifiers": [
+      {
+        "kind": "matrix256",
+        "value": "a88df098a32d98ff37c397884c30f39869980f2650204abcba3a5914ae1c4f82"
+      },
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "2A080D417F5A45605BB5E05FD7DE0087"
+      }
+    ],
+    "files": [
+      {
+        "path": "BDMV/index.bdmv",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "BDMV/MovieObject.bdmv",
+        "sizeBytes": 4096
+      },
+      {
+        "path": "BDMV/PLAYLIST/00800.mpls",
+        "sizeBytes": 1024
+      },
+      {
+        "path": "BDMV/CLIPINF/00300.clpi",
+        "sizeBytes": 8192
+      },
+      {
+        "path": "BDMV/CLIPINF/00301.clpi",
+        "sizeBytes": 8192
+      },
+      {
+        "path": "BDMV/STREAM/00300.m2ts",
+        "sizeBytes": 32212254720
+      },
+      {
+        "path": "BDMV/STREAM/00301.m2ts",
+        "sizeBytes": 16106127360
+      },
+      {
+        "path": "BDMV/STREAM/SSIF/00300.ssif",
+        "sizeBytes": 48318382080
+      },
+      {
+        "path": "BDMV/BACKUP/index.bdmv",
+        "sizeBytes": 2048
+      }
+    ],
+    "titles": [
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00800.mpls"
+        },
+        "durationSeconds": 8460,
+        "segments": [
+          {
+            "clip": "00300"
+          }
+        ],
+        "streams": [
+          {
+            "type": "video",
+            "codec": "HEVC",
+            "codingTypeCode": 36,
+            "dynamicRangeTypeCode": 1,
+            "colorSpaceCode": 2,
+            "hdrPlusFlag": false
+          }
+        ],
+        "stereoscopic3D": {
+          "relationshipType": "3d-dependent-view",
+          "baseClipId": "00300",
+          "baseCodecId": "M2TS",
+          "baseStcId": 0,
+          "dependentClipId": "00301",
+          "dependentCodecId": "M2TS",
+          "dependentStcId": 0,
+          "syncPlayItemId": 0,
+          "syncPresentationTimestampTicks45k": 0,
+          "isSsVideoSubPath": true,
+          "dependentStream": {
+            "pid": 4114,
+            "codingTypeCode": 32,
+            "codec": "MVC",
+            "formatCode": 3,
+            "rateCode": 3
+          }
+        }
+      }
+    ],
+    "clips": [
+      {
+        "clipId": "00301",
+        "streamPath": "BDMV/STREAM/00301.m2ts",
+        "clipInfoPath": "BDMV/CLIPINF/00301.clpi",
+        "durationSeconds": 8460,
+        "numberOfSourcePackets": 50000,
+        "transportStreamRecordingRate": 15000000,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "MVC",
+            "pid": 4114,
+            "codingTypeCode": 32,
+            "formatCode": 3,
+            "rateCode": 3
+          }
+        ]
+      }
+    ]
+  }
+}

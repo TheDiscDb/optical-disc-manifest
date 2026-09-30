@@ -1,0 +1,85 @@
+{
+  "$schema": "../../../schemas/v1/optical-disc-manifest.schema.json",
+  "schemaVersion": 1,
+  "producer": {
+    "name": "example-producer",
+    "version": "1.0.0"
+  },
+  "disc": {
+    "format": "blu-ray",
+    "identifiers": [
+      {
+        "kind": "matrix256",
+        "value": "abf62ea8144ffa23b08d8acda40e369fc34e7c99965e1a7aa80b133263b9b044"
+      },
+      {
+        "kind": "thediscdb-content-hash",
+        "value": "B8A8921F8AE716017E9752B04FA2ABC9"
+      }
+    ],
+    "files": [
+      {
+        "path": "BDMV/index.bdmv",
+        "sizeBytes": 2048
+      },
+      {
+        "path": "BDMV/MovieObject.bdmv",
+        "sizeBytes": 4096
+      },
+      {
+        "path": "BDMV/PLAYLIST/00500.mpls",
+        "sizeBytes": 1024
+      },
+      {
+        "path": "BDMV/PLAYLIST/00501.mpls",
+        "sizeBytes": 1024
+      },
+      {
+        "path": "BDMV/CLIPINF/00001.clpi",
+        "sizeBytes": 4096
+      },
+      {
+        "path": "BDMV/CLIPINF/00002.clpi",
+        "sizeBytes": 4096
+      },
+      {
+        "path": "BDMV/STREAM/00001.m2ts",
+        "sizeBytes": 21474836480
+      },
+      {
+        "path": "BDMV/STREAM/00002.m2ts",
+        "sizeBytes": 5368709120
+      }
+    ],
+    "titles": [
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00500.mpls"
+        },
+        "durationSeconds": 6000,
+        "segments": [
+          {
+            "clip": "00001"
+          },
+          {
+            "clip": "00002"
+          }
+        ]
+      },
+      {
+        "source": {
+          "path": "BDMV/PLAYLIST/00501.mpls"
+        },
+        "durationSeconds": 6000,
+        "segments": [
+          {
+            "clip": "00002"
+          },
+          {
+            "clip": "00001"
+          }
+        ]
+      }
+    ]
+  }
+}
